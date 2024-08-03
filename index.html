@@ -17,48 +17,100 @@
     <link href="https://fonts.googleapis.com/css2?family=Anta&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: #343a40;
-            color: white;
+            background-color: #2b2d30; /* Darker background for better contrast */
+            color: #f5f5f5; /* Lighter text color for readability */
             font-family: 'Anta', sans-serif;
         }
         .subtitle {
             font-size: 1.5rem;
+            color: #e0e0e0; /* Slightly lighter color for subtitles */
+        }
+        .title {
+            font-size: 2.5rem;
+            color: #ffffff; /* White title for strong contrast */
         }
         .title span {
-            color: rgb(141, 27, 27);
+            color: #f56c6c; /* Highlighted color for the title */
         }
         .linkpage a {
-            color: white;
+            color: #f5f5f5;
             margin-right: 10px;
         }
         .linkpage a:hover {
-            color: rgb(141, 27, 27);
+            color: #f56c6c; /* Hover color for links */
         }
         .card {
-            border: none;
+            border: 15%;
             cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Slightly darker shadow for hover effect */
+        }
+        .card-body {
+            background-color: #ffffff;
+            color: #333333; /* Darker text color for readability */
         }
         .card-body a {
-            color: black;
+            color: #333333;
             text-decoration: none;
         }
         .card-body a:hover {
-            color: rgb(175, 175, 196);
+            color: #f56c6c; /* Hover color for card links */
         }
-        .descript{
+        .descript {
             text-align: justify;
+            color: #e0e0e0; /* Lighter text color for descriptions */
         }
         footer {
             padding: 10px 0;
+                color: #ffffff;
+        }
+        .modal-content {
+            background-color: #1e1e1e; /* Dark modal background */
+            color: #f5f5f5; /* Light text color */
+        }
+        .modal-footer a {
+            color: #f5f5f5;
+        }
+        .modal-footer a:hover {
+            color: #f56c6c; /* Hover color for modal links */
+        }
+        @media (max-width: 768px) {
+            .title {
+                font-size: 1.75rem;
+            }
+            .subtitle {
+                font-size: 1.2rem;
+            }
+        }
+        .contact-info {
+             padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem auto;
+            width: 90%;
+            max-width: 600px;
+        }
+        .contact-info h4 {
+            margin-bottom: 1rem;
+            color: #f56c6c; /* Title color for contact info */
+        }
+        .contact-info a {
+            color: #432ede;
+            text-decoration: none;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
-<body class="bg-dark text-white">
+<body>
     <div class="container my-5">
         <div class="row align-items-center mb-5">
             <div class="col-md-6">
                 <div class="content">
-                    <p class="subtitle">Hi There</p>
+                    <p class="subtitle">Hi</p>
                     <h1 class="title">
                         I'm <span>Neethu Ganesh</span><br>
                         a <span>Full-Stack Developer</span>
@@ -69,7 +121,7 @@
                     <div class="linkpage">
                         <a target="_blank" href="https://www.linkedin.com/in/neethu-ganesh-87b51525b/"><i class="fa-brands fa-linkedin me-3"></i></a>
                         <a target="_blank" href="https://github.com/neethuganesh25?tab=repositories"><i class="fa-brands fa-github me-3"></i></a>
-                        <a target="_blank" href="./images/Neethu_Ganesh (2).pdf"><i class="fa-regular fa-file"></i></a>
+                        <a target="_blank" href="images/neethuganesh.pdf"><i class="fa-regular fa-file"></i></a>
                     </div>
                 </div>
             </div>
@@ -78,85 +130,91 @@
             </div>
         </div>
         <div class="row">
-            <h3 class="text-center">Projects</h3>
+            <h3 class="text-center mb-4" style="color: #f5f5f5;">Projects</h3>
             <div class="col-md-4 mb-3">
-                <div class="card bg-secondary" data-bs-toggle="modal" data-bs-target="#projectModal" data-title="Country Search" data-link="https://neethuganesh25.github.io/CountrySearch/">
+                <div class="card bg-light" data-bs-toggle="modal" data-bs-target="#projectModal" data-title="Country Search" data-link="https://neethuganesh25.github.io/CountrySearch/" data-img="images/countrysearch.png">
                     <div class="card-body">
-                        <h5 class="card-title text-white">Country Search</h5>
+                        <h5 class="card-title">Country Search</h5>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 mb-3">
-                <div class="card bg-secondary" data-bs-toggle="modal" data-bs-target="#projectModal" data-title="E-cart" data-link="https://ecart-redux-6i2w4tfkp-neethu-ganeshs-projects.vercel.app/">
+                <div class="card bg-light" data-bs-toggle="modal" data-bs-target="#projectModal" data-title="E-cart" data-link="https://ecart-redux-6i2w4tfkp-neethu-ganeshs-projects.vercel.app/" data-img="images/ecart.png">
                     <div class="card-body">
-                        <h5 class="card-title text-white">E-cart</h5>
+                        <h5 class="card-title">E-cart</h5>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 mb-3">
-                <div class="card bg-secondary" data-bs-toggle="modal" data-bs-target="#projectModal" data-title="Mediaplayer" data-link="https://mediaplayer-frontend-two.vercel.app/">
+                <div class="card bg-light" data-bs-toggle="modal" data-bs-target="#projectModal" data-title="Mediaplayer" data-link="https://mediaplayer-frontend-two.vercel.app/" data-img="images/download (2).png">
                     <div class="card-body">
-                        <h5 class="card-title text-white">Mediaplayer</h5>
+                        <h5 class="card-title">Mediaplayer</h5>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 mb-3">
-                <div class="card bg-secondary" data-bs-toggle="modal" data-bs-target="#projectModal" data-title="Simple Interest" data-link="https://simple-interest-black.vercel.app/">
+                <div class="card bg-light" data-bs-toggle="modal" data-bs-target="#projectModal" data-title="Simple Interest" data-link="https://simple-interest-black.vercel.app" data-img="images/simpleinterest.png">
                     <div class="card-body">
-                        <h5 class="card-title text-white">Simple Interest</h5>
+                        <h5 class="card-title">Simple Interest</h5>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 mb-3">
-                <div class="card bg-secondary" data-bs-toggle="modal" data-bs-target="#projectModal" data-title="BMI Calculator" data-link="https://bmi-git-master-neethu-ganeshs-projects.vercel.app/">
+                <div class="card bg-light" data-bs-toggle="modal" data-bs-target="#projectModal" data-title="BMI Calculator" data-link="https://bmi-git-master-neethu-ganeshs-projects.vercel.app/" data-img="images/bmi.png">
                     <div class="card-body">
-                        <h5 class="card-title text-white">BMI Calculator</h5>
+                        <h5 class="card-title">BMI Calculator</h5>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 mb-3">
-                <div class="card bg-secondary" data-bs-toggle="modal" data-bs-target="#projectModal" data-title="Recipe App" data-link="https://recipe-app-frontend-delta.vercel.app/">
+                <div class="card bg-light" data-bs-toggle="modal" data-bs-target="#projectModal" data-title="Recipe App" data-link="https://recipe-app-frontend-delta.vercel.app/" data-img="images/recipeapp.png">
                     <div class="card-body">
-                        <h5 class="card-title text-white">Recipe App</h5>
+                        <h5 class="card-title">Recipe App</h5>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- Contact Section -->
+        <div class="contact-info text-center">
+            <h4>How to Reach Me</h4>
+            <p>Email: <a href="mailto:neethuganesh2001@gmail.com">neethuganesh2001@gmail.com</a></p>
+            <p>Phone: 9526278507</p>
+        </div>
         <footer class="text-center mt-5">
-            <p>&copy; My portfolio website 2023 All Right Reserved&reg; Neethu Ganesh</p>
+            <p>&copy; 2023 Neethu Ganesh. All Rights Reserved&reg;</p>
         </footer>
     </div>
 
     <!-- Modal Structure -->
-    <div class="modal fade" id="projectModal" tabindex="-1"  aria-labelledby="projectModalLabel" aria-hidden="true">
+    <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
         <div class="modal-dialog">
-            <div class="modal-content bg-secondary text-white">
+            <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title text-dark" id="projectModalLabel">Project Title</h5>
+                    <h5 class="modal-title" id="projectModalLabel">Project Title</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                    <p>Project Description</p>
+                <div class="modal-body text-center">
+                    <img id="projectImage" src="" alt="Project Image" class="img-fluid mb-3">
                 </div>
-                <div class="modal-footer">
-                    <a href="#" target="_blank" class="btn btn-success " id="projectLink">Click here</a>
+                <div class="modal-footer justify-content-center">
+                    <a href="#" target="_blank" class="btn btn-success" id="projectLink">View</a>
                 </div>
             </div>
         </div>
     </div>
 
     <script>
-        const projectModal = document.getElementById('projectModal');
-        projectModal.addEventListener('show.bs.modal', function (event) {
+        document.getElementById('projectModal').addEventListener('show.bs.modal', function (event) {
             const button = event.relatedTarget;
             const title = button.getAttribute('data-title');
             const link = button.getAttribute('data-link');
-            const modalTitle = projectModal.querySelector('.modal-title');
-            const modalBody = projectModal.querySelector('.modal-body p');
-            const projectLink = projectModal.querySelector('#projectLink');
+            const img = button.getAttribute('data-img');
+            const modalTitle = this.querySelector('.modal-title');
+            const modalImage = this.querySelector('#projectImage');
+            const projectLink = this.querySelector('#projectLink');
 
             modalTitle.textContent = title;
-            modalBody.textContent = `Description for ${title} project.`;
+            modalImage.src = img;
             projectLink.href = link;
         });
     </script>
